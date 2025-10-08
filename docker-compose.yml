@@ -1,0 +1,54 @@
+x-ollama: &service-ollama
+  container_name: ollama
+  hostname: ollama
+  image: ollama/ollama:latest
+  networks: ['shared_network']
+  ports:
+    - 11434:11434
+  restart: always
+  volumes:
+    - ./data/ollama:/root/.ollama
+
+services:
+  webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: webui
+    hostname: webui
+    networks: ['shared_network']
+    ports:
+      - 8080:8080
+    restart: always
+    volumes:
+      - ./data/webui:/app/backend/data
+    environment:
+      # - ENABLE_SIGNUP=false
+      - OLLAMA_BASE_URL=http://ollama:11434
+
+  ollama-cpu:
+    profiles: ["cpu"]
+    <<: *service-ollama
+
+  ollama-gpu:
+    profiles: ["gpu-nvidia"]
+    <<: *service-ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  ollama-gpu-amd:
+    profiles: ["gpu-amd"]
+    <<: *service-ollama
+    image: ollama/ollama:rocm
+    devices:
+      - "/dev/kfd"
+      - "/dev/dri"
+
+networks:
+  shared_network:
+    name: shared_network
+    driver: bridge
+    external: true

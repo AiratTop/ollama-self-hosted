@@ -1,6 +1,6 @@
 # Ollama Self-Hosted with Docker
 
-![img](https://repository-images.githubusercontent.com/1071074164/fcb6df2a-a8df-4630-8ff1-725ab7b92197)
+![ollama-self-hosted](https://repository-images.githubusercontent.com/1071074164/fcb6df2a-a8df-4630-8ff1-725ab7b92197)
 
 This repository provides a `docker-compose` setup to run a self-hosted [Ollama](https://ollama.com/) instance with the [Open WebUI](https://github.com/open-webui/open-webui).
 

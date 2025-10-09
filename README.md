@@ -40,7 +40,7 @@ Edit the `.env` file to select the hardware profile for Ollama.
 ```bash
 # .env
 # Choose one of the available profiles: cpu, gpu-nvidia, gpu-amd
-PROFILE=cpu
+COMPOSE_PROFILES=cpu
 ```
 
 -   `cpu`: For CPU-only inference.

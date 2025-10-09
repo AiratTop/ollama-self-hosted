@@ -3,7 +3,7 @@
 date
 
 source .env
-echo "Selected ollama profile: ${PROFILE}"
+echo "Selected ollama profile: ${COMPOSE_PROFILES}"
 
 # Restart the container
-docker compose --profile "${PROFILE:-cpu}" restart
+docker compose --profile "${COMPOSE_PROFILES:-cpu}" restart

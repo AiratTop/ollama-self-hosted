@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source .env
-echo "Selected ollama profile: ${PROFILE}"
+echo "Selected ollama profile: ${COMPOSE_PROFILES}"
 
 # Stop and remove older version
-docker compose --profile "${PROFILE:-cpu}" down
+docker compose --profile "${COMPOSE_PROFILES:-cpu}" down

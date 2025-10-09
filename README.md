@@ -78,6 +78,28 @@ Since both services are on the `shared_network`, you can connect to Ollama from 
 
 For other components like [Qdrant](https://github.com/AiratTop/qdrant-self-hosted), [Caddy](https://github.com/AiratTop/caddy-self-hosted), and [monitoring](https://github.com/AiratTop/monitoring-self-hosted), see the list in the **See Also** section below.
 
+## Downloading Models
+
+After starting the services, you can download models in two ways:
+
+### 1. Using the Command Line
+
+You can pull models directly from the command line using `docker exec`. Browse available models on the [Ollama Library](https://ollama.com/library).
+
+For example, to download the `gemma3:1b` model, run:
+
+```bash
+docker exec -it ollama ollama pull gemma3:1b
+```
+
+### 2. Using the Open WebUI
+
+You can also download models through the web interface.
+
+1.  Open the Open WebUI at [http://localhost:8080](http://localhost:8080).
+2.  Open the "Models" dropdown in the top menu.
+3.  In the "Pull a model" field, enter the name of the model you want to download (e.g., `gemma3:1b`) and click the download button.
+
 ## See Also
 
 Check out other self-hosted solutions:

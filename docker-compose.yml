@@ -21,8 +21,8 @@ services:
     volumes:
       - ./data/webui:/app/backend/data
     environment:
-      # - ENABLE_SIGNUP=false
-      - OLLAMA_BASE_URL=http://ollama:11434
+      # ENABLE_SIGNUP: false
+      OLLAMA_BASE_URL: http://ollama:11434
 
   ollama-cpu:
     profiles: ["cpu"]

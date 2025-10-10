@@ -70,6 +70,8 @@ Once you have configured your profile in the `.env` file, you can use the helper
 
 After starting the services, you can access the Open WebUI at [http://localhost:8080](http://localhost:8080).
 
+![webui](https://github.com/open-webui/open-webui/blob/main/demo.gif)
+
 ## Connecting with n8n
 
 This setup is part of a larger collection of self-hosted services designed to create a complete, private development stack. It is pre-configured to work seamlessly with projects like [n8n-self-hosted](https://github.com/AiratTop/n8n-self-hosted).

@@ -9,6 +9,7 @@ x-ollama: &service-ollama
   volumes:
     - ./data/ollama:/root/.ollama
 
+name: ollama
 services:
   webui:
     image: ghcr.io/open-webui/open-webui:main

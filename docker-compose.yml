@@ -24,6 +24,12 @@ services:
     environment:
       # ENABLE_SIGNUP: false
       OLLAMA_BASE_URL: http://ollama:11434
+      GLOBAL_LOG_LEVEL: WARNING
+      WEBUI_SECRET_KEY: ${WEBUI_SECRET_KEY}
+      DEFAULT_LOCALE: en
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_API_BASE_URL: ${OPENAI_API_BASE_URL:-https://api.openai.com/v1}
+      # WEBUI_URL: ${WEBUI_URL}
 
   ollama-cpu:
     profiles: ["cpu"]

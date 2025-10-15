@@ -53,7 +53,7 @@ Once you have configured your profile in the `.env` file, you can use the helper
 
 -   **Start:**
     ```bash
-    ./start-docker.sh
+    docker compose up -d
     ```
 -   **Restart:**
     ```bash
@@ -62,10 +62,6 @@ Once you have configured your profile in the `.env` file, you can use the helper
 -   **Update:**
     ```bash
     ./update-docker.sh
-    ```
--   **Stop:**
-    ```bash
-    ./stop-docker.sh
     ```
 
 After starting the services, you can access the Open WebUI at [http://localhost:8080](http://localhost:8080).

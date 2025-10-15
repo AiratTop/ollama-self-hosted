@@ -2,18 +2,15 @@
 
 date
 
-source .env
-echo "Selected ollama profile: ${COMPOSE_PROFILES}"
-
 # backup container version
 date >> docker-image-versions.txt
 docker images >> docker-image-versions.txt
 
 # Pull latest version
-docker compose --profile "${COMPOSE_PROFILES:-cpu}" pull
+docker compose pull
 
 # Stop and remove older version
-./stop-docker.sh
+docker compose down
 
 # Start the container
-./start-docker.sh
+docker compose up -d

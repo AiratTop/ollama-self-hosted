@@ -2,7 +2,8 @@ x-ollama: &service-ollama
   container_name: ollama
   hostname: ollama
   image: ollama/ollama:latest
-  networks: ['shared_network']
+  networks:
+      - shared_network
   ports:
     - 11434:11434
   restart: always
@@ -15,7 +16,8 @@ services:
     image: ghcr.io/open-webui/open-webui:main
     container_name: webui
     hostname: webui
-    networks: ['shared_network']
+    networks:
+      - shared_network
     ports:
       - 8080:8080
     restart: always

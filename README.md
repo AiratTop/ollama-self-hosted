@@ -36,6 +36,7 @@ docker network create shared_network
 ### 3. Configure the Profile
 
 Edit the `.env` file to select the hardware profile for Ollama.
+You can use my Open Source [password generator](https://pass.airat.top) to create a strong password.
 
 ```bash
 # .env
